@@ -1,17 +1,16 @@
 const express = require('express');
-const userRoutes = require('./userRoutes');
-const categoryRoutes = require('./categoryRoutes');
+const router = express.Router();
+
 const productRoutes = require('./productRoutes');
 const cartRoutes = require('./cartRoutes');
 const purchaseRoutes = require('./purchaseRoutes');
+const productImgRoutes = require('./productImgRoutes');
+const authRoutes = require('./authRoutes'); // Añadir esta línea
 
-const router = express.Router();
-
-router.use('/users', userRoutes);
-router.use('/categories', categoryRoutes);
 router.use('/products', productRoutes);
 router.use('/cart', cartRoutes);
-router.use('/purchase', purchaseRoutes);
+router.use('/purchases', purchaseRoutes);
+router.use('/product-images', productImgRoutes);
+router.use('/auth', authRoutes); // Añadir esta línea
 
 module.exports = router;
-
