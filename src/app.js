@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
-const errorHandler = require('./middlewares/errorMiddleware'); // Importar el middleware de manejo de errores
+const errorHandler = require('./middlewares/errorMiddleware');
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.use('/api/v1', routes);
 // Middleware de manejo de errores global
 app.use(errorHandler);
 
-module.exports = app; // Asegúrate de exportar la aplicación
+module.exports = app;
 
 
 
