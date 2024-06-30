@@ -11,6 +11,15 @@ const getProducts = async (req, res) => {
 
 const createProduct = async (req, res) => {
     try {
+        const { title, price } = req.body;
+
+        if (!title || typeof title !== 'string' || title.length < 3 || title.length > 255) {
+            return res.status(400).json({ error: 'Nombre del producto inválido' });
+        }
+        if (isNaN(price) || price < 0) {
+            return res.status(400).json({ error: 'Precio del producto inválido' });
+        }
+
         const newProduct = await Product.create(req.body);
         res.status(201).json(newProduct);
     } catch (error) {

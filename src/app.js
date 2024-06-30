@@ -19,7 +19,7 @@ app.use('/api/v1', routes);
 // Middleware de manejo de errores global
 app.use(errorHandler);
 
-module.exports = app;
+module.exports = app; // Asegúrate de exportar la aplicación
 
 
 
