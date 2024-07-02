@@ -6,25 +6,27 @@ const Product = require('./product');
 const Cart = sequelize.define('Cart', {
     userId: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
-            model: User,
+            model: 'User',
             key: 'id',
         },
-        allowNull: false,
     },
     productId: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
-            model: Product,
+            model: 'Product',
             key: 'id',
         },
-        allowNull: false,
     },
     quantity: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
 }, {
+    sequelize,
+    modelName: 'Cart',
     timestamps: true,
 });
 

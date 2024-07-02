@@ -79,7 +79,7 @@ const addProductImage = async (req, res) => {
         const product = await Product.findByPk(id);
         if (product) {
             const imageUrl = req.body.url;
-            // posible campo para imágenes
+            //campo para imágenes
             product.images = [...product.images, imageUrl];
             await product.save();
             res.status(200).json(product);

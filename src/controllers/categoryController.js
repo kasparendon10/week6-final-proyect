@@ -1,6 +1,6 @@
 const { Category } = require('../models');
 
-const getCategories = async (req, res) => {
+const getCategories = async ( res) => {
     try {
         const categories = await Category.findAll();
         res.status(200).json(categories);
